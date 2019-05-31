@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Learn to grow your business, attract leads, increase sales and ensure repeat business with Facebook & Instagram Ads and Automation.">
-    <meta name="keywords" content="Businessity, Facebook Advertising, Sales, Increase Sales, Grow my Business, Business, attract leads, startups">
+    <meta name="description"
+        content="Learn to grow your business, attract leads, increase sales and ensure repeat business with Facebook & Instagram Ads and Automation.">
+    <meta name="keywords"
+        content="Businessity, Facebook Advertising, Sales, Increase Sales, Grow my Business, Business, attract leads, startups">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ads Workshop</title>
     <meta property="og:image" content="http://businessitygroup.com/wp-content/uploads/2019/05/logo-black.svg" />
-    <meta property="og:image:secure_url" content="http://businessitygroup.com/wp-content/uploads/2019/05/logo-black.svg" />
+    <meta property="og:image:secure_url"
+        content="http://businessitygroup.com/wp-content/uploads/2019/05/logo-black.svg" />
     <!-- Load Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -27,16 +31,154 @@
     <!-- Load Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-
-
-<!-- Load Boostrap, Slip JQuery and Popper.js scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Load the main.js file -->
-<script src="scripts/script.js" type="text/javascript"></script>
+    <div class="container" style="max-width: 90%;">
+        <div id="particles-js"></div>
+        <div class="row justify-content-start">
+            <div class="col top-margin">
+                <!-- Logo begins here -->
+                <p class="text-center animated pulse infinite">
+                    <img src="https://businessitygroup.com/wp-content/uploads/2019/05/logo-color.svg" height="120px"
+                        alt="Businessity Logo"> <br>
+                    <span class="roboto">BUSINESSITY</span>
+                </p>
+                <p class="boogaloo text-center" style="font-size: 220%;">Let's learn about you.</p>
+            </div>
+        </div>
+        <!-- Form Begins -->
+        <div class="row justify-content-center top-margin">
+            <form action="#" method="post" id="form" class="needs-validation bottom-margin" novalidate>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name" required>
+                    <div class="invalid-feedback">
+                        Please provide a name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    </div>
+                    <div class="col-md form-group">
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your Last Name" required>
+                    <div class="invalid-feedback">
+                        Please provide a name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    <div class="invalid-feedback">
+                        Please provide a name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    </div>
+                    <div class="col-md form-group">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your phone number" required>
+                     <div class="invalid-feedback">
+                        Please provide a valid phone number.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <legend class="col-form-label">Do you have a business or work for one?</legend>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="ownABusiness" id="ownABusiness" class="form-check-input" value="ownABusiness">
+                            <label for="ownABusiness" class="form-check-label">I own a business</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="ownABusiness" id="workForOne" class="form-check-input" value="workForOne" required>
+                            <label for="workForOne" class="form-check-label">I work for one</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="typeOfBusiness">What type of Business is it?</label>
+                        <input type="text" class="form-control" id="typeOfBusiness" name="typeOfBusiness" required />
+                        <div class="invalid-feedback">
+                            This will help us understand your business better.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="lengthOfExistence">How many years have you been there for?</label>
+                        <input type="number" class="form-control" id="lengthOfExistence" name="lengthOfExistence" required min="0"/>
+                        <div class="invalid-feedback">
+                            This will help us know you better.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="referringChannel">How did you hear about us?</label>
+                        <select class="custom-select" name="referringChannel" id="referringChannel" required>
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="Family Member">Family Member</option>
+                            <option value="A friend">A friend</option>
+                            <option value="Social Media">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Twiter">Twitter</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center">
+                            <button type="submit" id="register" class="btn btn-danger"
+                                style="padding-left: 40px; padding-right:40px; margin-top:20px;">
+                                Submit <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-center">
+                    &copy; <span id="year"></span> Businessity Group</p>
+                <small class="text-center form-text bottom-margin">Designed and Developed by
+                    <a href="https://stbensonimoh.com/about" target="_blank">Benson Imoh,ST</a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/particles.js"></script>
+    <!-- Load Boostrap, Slip JQuery and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Load the main.js file -->
+    <script src="scripts/script.js" type="text/javascript"></script>
 </body>
+
 </html>
