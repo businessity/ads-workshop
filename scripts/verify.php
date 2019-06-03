@@ -46,12 +46,12 @@ if ('success' === $trx->data->status) {
     $email = $trx->data->customer->email;
 
     // Update the database with paid
-    if ($db->updatePaid("awlccanada2019", $details, "email", $email)) {
+    if ($db->updatePaid("businessity_adsworkshop", $details, "email", $email)) {
 
         //Query the database with Customer email to get phone number;
-        if ($db->userExists($email, "awlccanada2019")) {
+        if ($db->userExists($email, "businessity_adsworkshop")) {
             // Select the user
-            $result = $db->userSelect($email, "awlccanada2019");
+            $result = $db->userSelect($email, "businessity_adsworkshop");
 
             // get the phone number
             foreach ($result as $key => $value) {
@@ -63,7 +63,7 @@ if ('success' === $trx->data->status) {
         require './emails.php';
 
         //Send SMS
-        $notify->viaSMS("AWLO Int", "Dear {$firstName} {$lastName}, thank you for registering for African Women in Leadership Conference Canada 2019. Look out for updates on awlo.org/awlc and our social media pages. See you in Canada!", $phone);
+        $notify->viaSMS("Businessity", "Dear {$firstName} {$lastName}, thank you for registering for the Businessity Ads Workshop. Look out for updates in your email and our social media pages. See you at the Workshop!", $phone);
 
         /**
          * Add User to the SendPule mailing List
@@ -79,10 +79,10 @@ if ('success' === $trx->data->status) {
             )
         );
 
-        $newsletter->insertIntoList("2369370", $emails);
+        $newsletter->insertIntoList("171492", $emails);
 
         // Send Email
-        $notify->viaEmail("info@awlo.org", "African Women in Leadership Organisation", $email, $name, $emailBodyDelegate, "Successful Registration for #AWLCCanada2019");
+        $notify->viaEmail("info@businessitygroup.com", "Businessity", $email, $name, $emailBodyDelegate, "Successful Registration for Businessity Ads Workshop");
 
         header('Location: ../success.html');
     }

@@ -75,18 +75,18 @@ const form = document.querySelector('form')
         })
         .then(data => {
           console.log(data)
-        //   if (data === 'user_exists') {
-        //     swal(
-        //       'Already Registered',
-        //       'You have already registered for the workshop.',
-        //       'warning'
-        //     )
-        //     setTimeout(() => {
-        //       window.location = 'https://businessitygroup.com/ads-workshop/inviteafriend'
-        //     }, 3000)
-        //   } else {
-        //     window.location.href = data
-        //   }
+          if (data === 'user_exists') {
+            swal(
+              'Already Registered',
+              'You have already registered for the workshop.',
+              'warning'
+            )
+            setTimeout(() => {
+              window.location = 'https://businessitygroup.com/ads-workshop'
+            }, 3000)
+          } else {
+            window.location.href = data
+          }
         })
         .catch(error => {
           console.log('The Request Failed', error)
