@@ -10,8 +10,8 @@
  * @license  MIT https://opensource.org/licenses/MIT
  * @link     https://stbensonimoh.com
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 // echo json_encode($_POST);
 //pull in the database
 require '../config.php';
@@ -44,6 +44,8 @@ $details = array(
     "referrer" => $referrer
 );
 $db = new DB($host, $db, $username, $password);
+$notify = new Notify($smstoken, $emailHost, $emailUsername, $emailPassword, $SMTPDebug, $SMTPAuth, $SMTPSecure, $Port);
+$newsletter = new Newsletter($apiUserId, $apiSecret);
 // First check to see if user is in the Database
 if ($db->userExists($email, "businessity_adsworkshop")) {
     // Check to see if the user has paid
@@ -59,7 +61,7 @@ if ($db->userExists($email, "businessity_adsworkshop")) {
             'amount'=> $amount, /* 20 naira */
             'email'=> $email,
             'currency' => $currency,
-            'callback_url' => 'https://businessitygroup.com/adsworkshop/scripts/verify.php',
+            'callback_url' => 'https://businessitygroup.com/adsworkshop/register/scripts/verify.php',
             'metadata' => json_encode(
                 [
                 'custom_fields'=> [
