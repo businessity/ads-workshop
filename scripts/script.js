@@ -74,7 +74,7 @@ const form = document.querySelector('form')
           return response.json()
         })
         .then(data => {
-          console.log(data)
+        //   console.log(data)
           if (data === 'user_exists') {
             swal(
               'Already Registered',

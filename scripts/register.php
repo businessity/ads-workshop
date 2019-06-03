@@ -14,9 +14,12 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // echo json_encode($_POST);
 //pull in the database
-// require '../config.php';
-// require './Paystack.php';
-// require './DB.php';
+require '../config.php';
+require './Paystack.php';
+require './DB.php';
+require './Notify.php';
+require './Newsletter.php';
+
 $currency = "NGN";
 $amount = 150000 * 100;
 // // Capture Post Data that is coming from the form
@@ -32,13 +35,12 @@ $referrer = $_POST['referrer'];
 $details = array(
     "firstName" => $firstName,
     "lastName" => $lastName,
-    "email" => $_POST['email'],
+    "email" => $email,
     "phone" => $phone,
     "ownABusiness" => $ownABusiness,
     "typeOfBusiness" => $typeOfBusiness,
     "lengthOfExistence" => $lengthOfExistence,
     "referringChannel" => $referringChannel,
-    "firstConference" => $firstConference,
     "referrer" => $referrer
 );
 $db = new DB($host, $db, $username, $password);
@@ -86,6 +88,30 @@ if ($db->userExists($email, "businessity_adsworkshop")) {
 } else {
     // Insert the user into the database
     if ($db->insertUser("businessity_adsworkshop", $details)) {
+        //Send SMS
+        $notify->viaSMS("Businessity", "Dear {$firstName} {$lastName}, thank you for indicating interest in our Ads Workshop. Your registration is almost complete. Your registration will be complete when you pay.", $phone);
+
+        /**
+         * Add User to the SendPule mailing List
+         */
+        $emails = array(
+                array(
+                    'email'         =>  $email,
+                    'variables'     =>  array(
+                    'phone'         =>  $phone,
+                    'name'          =>  $firstName,
+                    'lastName'      =>  $lastName
+                )
+            )
+        );
+
+        $newsletter->insertIntoList("171493", $emails);
+
+        require './emails.php';
+
+        // Send Email
+        $notify->viaEmail("info@businessitygroup.com", "Businessity", $email, $name, $emailBodyStart, "Your registration is almost complete!");
+
         $paystack = new Paystack($paystackKey);
         // throw an exception if there was a problem completing the request,
         // else returns an object created from the json response

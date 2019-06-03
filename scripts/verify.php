@@ -82,7 +82,7 @@ if ('success' === $trx->data->status) {
         $newsletter->insertIntoList("171492", $emails);
 
         // Send Email
-        $notify->viaEmail("info@businessitygroup.com", "Businessity", $email, $name, $emailBodyDelegate, "Successful Registration for Businessity Ads Workshop");
+        $notify->viaEmail("info@businessitygroup.com", "Businessity", $email, $name, $emailBodyFinal, "Successful Registration for Businessity Ads Workshop");
 
         header('Location: ../success.html');
     }
