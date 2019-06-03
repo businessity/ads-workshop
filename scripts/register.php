@@ -122,7 +122,7 @@ if ($db->userExists($email, "businessity_adsworkshop")) {
             'amount'=> $amount, /* 20 naira */
             'email'=> $email,
             'currency' => $currency,
-            'callback_url' => 'https://businessitygroup.com/adsworkshop/scripts/verify.php',
+            'callback_url' => 'https://businessitygroup.com/adsworkshop/register/scripts/verify.php',
             'metadata' => json_encode(
                 [
                 'custom_fields'=> [
