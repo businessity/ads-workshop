@@ -66,7 +66,7 @@ const form = document.querySelector('form')
       formdata.append('referrer', referrer)
 
     //   // initiate a fetch call
-    //   fetch('scripts/paynow.php', {
+    //   fetch('scripts/register.php', {
     //     method: 'post',
     //     body: formdata
     //   })
