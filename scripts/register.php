@@ -91,7 +91,7 @@ if ($db->userExists($email, "businessity_adsworkshop")) {
     // Insert the user into the database
     if ($db->insertUser("businessity_adsworkshop", $details)) {
         //Send SMS
-        $notify->viaSMS("Businessity", "Dear {$firstName} {$lastName}, thank you for indicating interest in our Ads Workshop. Your registration is almost complete. Your registration will be complete when you pay.", $phone);
+        $notify->viaSMS("Businessity", "Dear {$firstName} {$lastName}, thank you for indicating interest in our Ads Workshop. Your registration is almost complete. Your registration will be complete when you pay. Click https://businessitygroup.com/adsworkshop/register to complete your registration.", $phone);
 
         /**
          * Add User to the SendPule mailing List

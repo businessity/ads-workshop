@@ -1,5 +1,5 @@
 <?php
-$emailBodyFinal = "<table style='background-color: #d5d5d5;' border='0' width='100%' cellspacing='0'>
+$emailBodyStart = "<table style='background-color: #d5d5d5;' border='0' width='100%' cellspacing='0'>
 <tbody>
 <tr>
 <td>
@@ -17,6 +17,7 @@ $emailBodyFinal = "<table style='background-color: #d5d5d5;' border='0' width='1
 <td style='color: #000; font-size: 12pt; font-family: Helvetica; font-weight: normal; line-height: 15pt; padding: 40px 40px 80px 40px;' colspan='2' valign='top'>Dear {$firstName} {$lastName},
 <p>Thank you for indicating interest in our Ads Workshop. Your registration is almost complete.</p>
 <p>Your registration will be complete when you pay.</p>
+<p>Click <a href='https://businessitygroup.com/adsworkshop/register' target='_blank'>HERE</a> to complete your registration.</p>
 <p>See you soon!</p>
 </td>
 </tr>
@@ -45,7 +46,7 @@ $emailBodyFinal = "<table style='background-color: #d5d5d5;' border='0' width='1
 </tr>
 </tbody>
 </table>";
-$emailBodyStart = "<table style='background-color: #d5d5d5;' border='0' width='100%' cellspacing='0'>
+$emailBodyFinal = "<table style='background-color: #d5d5d5;' border='0' width='100%' cellspacing='0'>
 <tbody>
 <tr>
 <td>
